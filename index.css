@@ -24,7 +24,7 @@ body {
   text-align: center;
   position: relative;
   z-index: 99;
-  display: none;
+  /* display: none; */
 }
 #loader video {
   height: 100%;

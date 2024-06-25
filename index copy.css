@@ -33,22 +33,6 @@ body {
   object-fit: cover;
   z-index: 6;
 }
-.btn-to-page2 {
-  all: unset;
-  position: fixed;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  transform-origin: center;
-  transform: scaleY(-1);
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.btn-to-page2:hover {
-  transform: scale(-1.1);
-}
-
 #loader h1 {
   font-size: 6vw;
   line-height: 5.5vw;
@@ -97,7 +81,7 @@ body {
 #page2 {
   height: 100vh;
   width: 100%;
-  background-color: black;
+  background-color: white;
   color: white;
   display: flex;
   align-items: center;
@@ -110,7 +94,7 @@ body {
 
 #main {
   min-height: 100vh;
-  background-color: black;
+  background-color: white;
 }
 .elem {
   width: 100%;
@@ -185,7 +169,7 @@ body {
 .image-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-  grid-auto-rows: 4px; /* Define a base row height to create the masonry effect */
+  grid-auto-rows: 3px; /* Define a base row height to create the masonry effect */
   gap: 10px; /* Space between grid items */
   margin: 40px;
 }
@@ -229,6 +213,7 @@ body {
   transition: all 0.3s ease;
   transition-delay: 0.1s;
 }
+
 
 .image-div:hover .overlay {
   background-color: #000000ed;

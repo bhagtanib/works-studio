@@ -1,10 +1,21 @@
 history.scrollRestoration = "manual";
 
 function initScroll() {
-  const scroll = new LocomotiveScroll({
+  var locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
     smooth: true,
   });
+  return locoScroll
+}
+function scrollToPage2() {
+  console.log("tryiing");
+  // Initialize Locomotive Scroll if not already initialized
+  if (typeof locoScroll === "undefined") {
+    console.log("not def");
+    var locoScroll = initScroll();
+  }
+  // Scroll to #targetDiv
+  locoScroll.scrollTo(document.querySelector("#page2"));
 }
 
 function loader() {
@@ -59,6 +70,16 @@ elems.forEach(function (elem) {
   elem.addEventListener("mouseenter", function () {
     var bgimg = elem.getAttribute("data-img");
     console.log(main);
-    page2.style.backgroundImage = `url(${bgimg})`
+    page2.style.backgroundImage = `url(${bgimg})`;
+  });
+});
+
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+  const imageDivs = document.querySelectorAll(".image-div");
+  imageDivs.forEach((div) => {
+    const randomHeight = Math.floor(Math.random() * (650 - 350 + 1)) + 350;
+    const gridRowEndValue = Math.ceil(randomHeight / 10); // Calculate the number of rows to span
+    div.style.gridRowEnd = `span ${gridRowEndValue}`;
   });
 });

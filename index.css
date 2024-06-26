@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,8 @@ html,
 body {
   height: 100%;
   width: 100%;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -90,7 +93,6 @@ body {
 #page1 h1 {
   font-size: 6vw;
   line-height: 5.5vw;
-  font-family: "Freight big pro";
   letter-spacing: -3px;
   font-weight: 100;
 }
@@ -245,5 +247,10 @@ body {
   }
   to {
     transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 720px) {
+  .image-container {
+    grid-template-columns: repeat(1, 1fr); /* Single column */
   }
 }

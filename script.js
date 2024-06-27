@@ -80,11 +80,13 @@ elems.forEach(function (elem) {
 document.getElementById("hamburger").addEventListener("click", function () {
   this.classList.toggle("open");
   const navRightItems = document.querySelector(".nav-right-items-container");
-  if (this.classList.contains("open")) {
-    navRightItems.style.width = "100px";
-  } else {
-    navRightItems.style.width = "300px";
-  }
+  document.querySelector(".nav-right-items-container").classList.toggle("open");
+  document.querySelector(".nav-right-items").classList.toggle("open");
+  // if (this.classList.contains("open")) {
+  //   navRightItems.style.width = "100px";
+  // } else {
+  //   navRightItems.style.width = "300px";
+  // }
 });
 
 // script.js

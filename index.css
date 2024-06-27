@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -79,6 +79,80 @@ body {
   position: absolute;
   padding: 30px 50px;
   z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-left{
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  gap: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+.nav-right-items-container {
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+.nav-right-items {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  right: 0;
+  transition: all 0.5s ease;
+  width: 100%;
+  gap: 40px;
+  display: flex;
+}
+.nav-right-items span {
+  cursor: pointer;
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hamburger div {
+  width: 20px;
+  height: 1.5px;
+  background-color: #333;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.hamburger div:nth-child(1) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.hamburger div:nth-child(2) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.hamburger.open div:nth-child(1) {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.open div:nth-child(2) {
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 #page1 {
@@ -95,6 +169,7 @@ body {
   line-height: 5.5vw;
   letter-spacing: -3px;
   font-weight: 100;
+  position: relative;
 }
 #page2 {
   height: 100vh;
@@ -189,7 +264,8 @@ body {
   grid-template-columns: repeat(3, 1fr); /* Three equal columns */
   grid-auto-rows: 4px; /* Define a base row height to create the masonry effect */
   gap: 10px; /* Space between grid items */
-  margin: 40px;
+  margin: 20px;
+  padding-bottom: 40px;
 }
 
 .image-div {
@@ -241,6 +317,41 @@ body {
 .image-div:hover img {
   transform: scale(1.1);
 }
+
+
+
+#footer{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 30px 5% 30px 5%;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+#footer p{
+  width: 30%;
+  text-align: center;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+#footer a{
+  color:white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  height: fit-content;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+#footer a:hover{
+  border-bottom: 2px solid white;
+}
+#footer .footer-right{
+  display: flex;
+  gap: 30px;
+
+}
+
+
 @keyframes moving {
   from {
     transform: translateX(0);

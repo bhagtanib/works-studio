@@ -1,21 +1,24 @@
 history.scrollRestoration = "manual";
 
 function initScroll() {
-  var locoScroll = new LocomotiveScroll({
+  window.locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
     smooth: true,
   });
-  return locoScroll
+  return locoScroll;
+}
+function scrollToPage1() {
+  window.locoScroll.scrollTo(document.querySelector("#page1"));
 }
 function scrollToPage2() {
-  console.log("tryiing");
-  // Initialize Locomotive Scroll if not already initialized
-  if (typeof locoScroll === "undefined") {
-    console.log("not def");
-    var locoScroll = initScroll();
-  }
-  // Scroll to #targetDiv
-  locoScroll.scrollTo(document.querySelector("#page2"));
+  window.locoScroll.scrollTo(document.querySelector("#page2"));
+}
+
+function scrollToPage3() {
+  window.locoScroll.scrollTo(document.querySelector("#page3"));
+}
+function scrollToFooter() {
+  window.locoScroll.scrollTo(document.querySelector("#footer"));
 }
 
 function loader() {
@@ -72,6 +75,16 @@ elems.forEach(function (elem) {
     console.log(main);
     page2.style.backgroundImage = `url(${bgimg})`;
   });
+});
+
+document.getElementById("hamburger").addEventListener("click", function () {
+  this.classList.toggle("open");
+  const navRightItems = document.querySelector(".nav-right-items-container");
+  if (this.classList.contains("open")) {
+    navRightItems.style.width = "100px";
+  } else {
+    navRightItems.style.width = "300px";
+  }
 });
 
 // script.js

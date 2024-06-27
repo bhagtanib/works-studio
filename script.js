@@ -4,6 +4,14 @@ function initScroll() {
   window.locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
     smooth: true,
+    mobile: {
+      smooth: true,
+      getDirection: true
+    },
+    tablet: {
+      smooth: true,
+      getDirection: true
+    }
   });
   return locoScroll;
 }
